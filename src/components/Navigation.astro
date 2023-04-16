@@ -1,0 +1,70 @@
+---
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+---
+
+<nav>
+  <div class="mx-6 mt-4 desktop:mx-8">
+    <div class="relative flex items-center justify-between">
+      <Logo />
+      <!-- Mobile menu button -->
+      <button
+        class="desktop:hidden"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <svg
+          width="22"
+          height="16"
+          viewBox="0 0 22 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M1.39998 0.800049C0.958152 0.800049 0.599976 1.15822 0.599976 1.60005C0.599976 2.04187 0.958152 2.40005 1.39998 2.40005H20.6C21.0417 2.40005 21.4 2.04187 21.4 1.60005C21.4 1.15822 21.0417 0.800049 20.6 0.800049H1.39998ZM0.599976 8.00005C0.599976 7.55822 0.958152 7.20005 1.39998 7.20005H20.6C21.0417 7.20005 21.4 7.55822 21.4 8.00005C21.4 8.44187 21.0417 8.80005 20.6 8.80005H1.39998C0.958152 8.80005 0.599976 8.44187 0.599976 8.00005ZM0.599976 14.4C0.599976 13.9583 0.958152 13.6 1.39998 13.6H20.6C21.0417 13.6 21.4 13.9583 21.4 14.4C21.4 14.8418 21.0417 15.2 20.6 15.2H1.39998C0.958152 15.2 0.599976 14.8418 0.599976 14.4Z"
+            fill="white"></path>
+        </svg>
+      </button>
+
+      <ul class="hidden gap-8 desktop:flex">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Case Studies</a></li>
+        <li><a href="#">Work Models</a></li>
+      </ul>
+
+      <div class="hidden desktop:block">
+        <Button title="Let's Work Together" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state -->
+  <div class="hidden" id="mobile-menu">
+    <div class="space-y-1 p-2 text-50">
+      <a href="#" class="block px-3 py-2">About Us</a>
+      <a href="#" class="block px-3 py-2">Case Studies</a>
+      <a href="#" class="block px-3 py-2">Work Models</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menu = document.querySelector("#mobile-menu") as HTMLElement;
+  const menuBtn = document.querySelector(
+    'button[aria-controls="mobile-menu"]'
+  ) as HTMLElement;
+
+  menuBtn.addEventListener("click", () => {
+    const expanded =
+      menuBtn.getAttribute("aria-expanded") === "true" ? true : false;
+    if (expanded) {
+      menu.style.display = "none";
+      menuBtn.setAttribute("aria-expanded", "false");
+    } else {
+      menu.style.display = "block";
+      menuBtn.setAttribute("aria-expanded", "true");
+    }
+  });
+</script>
