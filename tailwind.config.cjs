@@ -4,7 +4,7 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     screens: {
-      desktop: "960px",
+      desktop: "768px",
     },
     colors: {
       white: "#ffffff",

@@ -1,11 +1,247 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import Button from "../components/Button.astro";
+import { Image } from "@astrojs/image/components";
+import heroImageMobile from "../assets/images/hero-mobile.png";
+import heroImageDesktop from "../assets/images/hero-desktop.png";
+import launchImage from "../assets/images/launch.png";
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Stellar Labs - Launch your digital product at speed">
   <Navigation />
   <main>
-    <form name="contact" method="POST" data-netlify="true"></form>
+    <section>
+      <div class="contain mb-8 mt-12 desktop:mb-12 desktop:mt-24">
+        <div
+          class="mx-auto flex max-w-4xl flex-col gap-4 text-center desktop:gap-6"
+        >
+          <h1 class="font-phudu text-500 leading-none desktop:text-700">
+            Shape ideas into <span class="text-brand-500">world class</span> digital
+            products
+          </h1>
+          <p class="mx-auto max-w-3xl desktop:text-200">
+            Stellar Labs help you transform your brilliant business idea into a
+            quality digital product that scales. Make contact today for a swift
+            and speedy market launch of your next big product
+          </p>
+          <div class="flex justify-center gap-4 desktop:gap-6">
+            <Button title="Let's work together" href="#cta" variant="primary" />
+            <Button title="Learn More" href="#about-us" variant="secondary" />
+          </div>
+        </div>
+        <div class="mt-6 desktop:hidden">
+          <Image
+            class="mx-auto"
+            src={heroImageMobile}
+            alt="A spaceship flying in space"
+            width={342}
+          />
+        </div>
+        <div class="mt-12 hidden desktop:block">
+          <Image
+            class="mx-auto"
+            src={heroImageDesktop}
+            alt="A spaceship flying in space"
+            width={1024}
+          />
+        </div>
+      </div>
+    </section>
+    <section id="about-us" class="bg-primary-700">
+      <div
+        class="contain flex flex-col gap-6 py-8 desktop:gap-12 desktop:py-12"
+      >
+        <div class="text-center">
+          <p class="text-50 uppercase text-brand-400 desktop:text-100">
+            About Us
+          </p>
+          <h2 class="font-phudu text-400 leading-none desktop:text-600">
+            A Stellar Experience
+          </h2>
+        </div>
+        <div
+          class="flex flex-col-reverse items-center gap-6 desktop:flex-row desktop:gap-20"
+        >
+          <div class="flex-1">
+            <Image src={launchImage} alt="A rocket launch" />
+          </div>
+          <div class="flex flex-1 flex-col gap-6 desktop:pr-8">
+            <p class="text-200 font-bold leading-tight desktop:text-300">
+              Stellar Labs is a digital product development agency that
+              specializes in building innovative solutions for businesses and
+              tech startups
+            </p>
+            <p>
+              We commit to deliver world-class software at unprecedented speed
+              using expertise in technology, design and agile project management
+            </p>
+            <ul class="flex flex-col gap-4">
+              <li class="flex items-center gap-3">
+                <span class="font-phudu text-400 leading-none text-brand-500"
+                  >001</span
+                >
+                <span class="text-200 font-medium desktop:text-300"
+                  >Design and Prototyping</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="font-phudu text-400 leading-none text-brand-500"
+                  >002</span
+                >
+                <span class="text-200 font-medium desktop:text-300"
+                  >Full-stack Web Development</span
+                >
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="font-phudu text-400 leading-none text-brand-500"
+                  >003</span
+                >
+                <span class="text-200 font-medium desktop:text-300"
+                  >Mobile App Development</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="case-studies">
+      <div
+        class="contain flex flex-col gap-6 py-8 desktop:gap-12 desktop:py-12"
+      >
+        <div class="text-center desktop:text-left">
+          <p class="text-50 uppercase text-brand-400 desktop:text-100">
+            Case Studies
+          </p>
+          <h2 class="font-phudu text-400 leading-none desktop:text-600">
+            Our Success Stories
+          </h2>
+        </div>
+        <div class="flex flex-col gap-6 desktop:flex-row desktop:gap-20">
+          <div class="flex flex-1 flex-col gap-6 desktop:pr-8">
+            <p class="text-200 font-bold leading-tight desktop:text-300">
+              Lucky Arts Admin — an invoicing app that manages all of the
+              business billing and invoicing records on-the-fly
+            </p>
+            <p>
+              We helped a graphic arts studio called Lucky Arts in building an
+              in-house invoicing web app that moved all their paper-based
+              billing infrastructure to the cloud for seamless business
+              operations and growth
+            </p>
+            <p>
+              <Button title="Read full story" variant="secondary" />
+            </p>
+            <div class="flex max-w-xs flex-col gap-2">
+              <p>
+                <span class="text-500 font-bold leading-none text-brand-400"
+                  >“</span
+                >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore
+              </p>
+              <p><strong>Mudassir Khakwani</strong>, CEO Lucky Arts</p>
+            </div>
+          </div>
+          <div class="flex-1">
+            <Image src={launchImage} alt="A rocket launch" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="work-models" class="bg-primary-700">
+      <div
+        class="contain flex flex-col gap-6 py-8 desktop:gap-12 desktop:py-12"
+      >
+        <div class="text-center">
+          <p class="text-50 uppercase text-brand-400 desktop:text-100">
+            Work Models
+          </p>
+          <h2 class="font-phudu text-400 leading-none desktop:text-600">
+            An uncommon approach
+          </h2>
+        </div>
+        <div
+          class="flex flex-col items-center gap-6 desktop:flex-row desktop:gap-12"
+        >
+          <div class="flex flex-1 flex-col gap-4">
+            <p class="text-200 font-bold leading-tight desktop:text-300">
+              We work with small dedicated teams in sprints to ensure delivering
+              your desired value in a matter of weeks
+            </p>
+            <p>
+              Stellar Labs is a strong advocate of small, agile teams that have
+              complementary skills
+            </p>
+            <p>
+              They bring in the right amount of flexibility and competency that
+              is necessary to deliver the highest value at the shortest possible
+              period of time in software design and development
+            </p>
+          </div>
+          <div class="flex flex-1 flex-col gap-4">
+            <p>
+              <svg
+                class="h-8 w-8 desktop:h-12 desktop:w-12"
+                width="50"
+                height="48"
+                viewBox="0 0 50 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M20.1511 29.8112C19.4233 30.0803 18.6823 30.3088 17.9701 30.626C15.8641 31.564 13.8569 31.3879 11.8645 30.1379C11.4391 29.871 10.7745 29.8521 10.2981 30.0205C8.87684 30.5228 7.49729 31.1848 6.096 31.7665C3.44103 32.8685 1.16738 31.8014 0.284967 29.0522C-0.587229 26.3349 0.589557 23.6833 3.17399 22.5483C3.71297 22.3116 4.25005 22.0664 4.79722 21.8583C6.74387 21.1177 8.53172 20.4462 9.44561 17.7521C9.90878 16.3867 11.5195 15.2959 12.8174 14.6285C15.5788 13.2084 18.4865 12.1812 21.3062 10.908C21.8827 10.6476 22.3344 10.0118 22.8467 9.5538C23.9705 8.54932 24.9766 7.19528 26.2425 6.60813C30.969 4.41588 35.7764 2.4607 40.5625 0.446079C43.3575 -0.730379 45.475 0.441188 46.5126 3.7122C47.5641 7.02689 48.6041 10.3469 49.6189 13.6771C50.6183 16.9566 49.6226 19.4258 46.8223 20.6305C42.7254 22.3929 38.6084 24.0925 34.5233 25.8912C32.1653 26.9294 29.8381 27.9485 26.8995 26.3721C27.2979 27.4027 27.4763 27.9346 27.7021 28.4375C29.9553 33.455 32.2163 38.4678 34.4751 43.482C34.6316 43.8295 34.7931 44.1741 34.9431 44.5254C35.5699 45.9929 35.3886 47.1493 34.4429 47.7417C33.4912 48.338 32.5057 47.8942 31.864 46.4892C30.3268 43.1238 28.8219 39.7382 27.2988 36.3639C27.0619 35.8391 26.7981 35.3309 26.255 34.8691C26.255 37.7993 26.255 40.7294 26.2549 43.6595C26.2549 44.2769 26.2522 44.8943 26.2543 45.5116C26.2588 46.8891 25.7695 47.8464 24.5149 47.8617C23.2562 47.877 22.7564 46.9404 22.7582 45.5499C22.7622 42.5754 22.758 39.6008 22.7573 36.6262C22.7571 36.0759 22.7573 35.5256 22.4801 34.8171C22.2347 35.2951 21.9698 35.761 21.747 36.253C20.198 39.6744 18.711 43.1368 17.0709 46.4971C16.7348 47.1856 15.8757 47.7307 15.181 47.8927C14.7966 47.9824 13.9731 47.2293 13.8507 46.6977C13.6884 45.9926 13.8618 45.0397 14.1609 44.3543C16.2108 39.6574 18.3313 35.0027 20.4923 30.1356C20.4207 29.895 20.2859 29.8531 20.1511 29.8112ZM33.472 7.81845C31.4447 8.68452 29.4053 9.51416 27.3936 10.4273C25.5407 11.2684 24.7969 13.1177 25.4193 15.3167C25.9316 17.1265 26.4895 18.9218 27.0983 20.6901C27.8148 22.7714 29.3685 23.6471 31.1884 22.8945C35.9819 20.9121 40.7471 18.8363 45.5336 16.83C46.4085 16.4633 46.6132 15.9257 46.2859 14.9124C45.2691 11.764 44.2624 8.60933 43.3377 5.42296C42.9584 4.11575 42.3899 3.98362 41.3862 4.43388C38.834 5.57881 36.2538 6.63859 33.472 7.81845ZM14.2369 18.3104C12.1655 19.3563 11.3846 20.961 11.8865 23.1405C12.5321 25.9444 13.9273 27.606 15.6557 27.0439C18.5802 26.0926 21.4155 24.7666 24.2735 23.6041C23.3518 20.6617 22.5169 17.9962 21.6359 15.1834C19.1887 16.2162 16.8154 17.2178 14.2369 18.3104ZM5.2142 26.0069C4.81441 26.1873 4.35708 26.2815 4.03369 26.5765C3.7912 26.7977 3.72105 27.2772 3.57416 27.6417C3.89495 27.793 4.27471 28.1565 4.52685 28.0607C6.04765 27.483 7.53923 26.8 8.98636 26.1757C8.91735 24.8043 8.46859 24.5194 7.56781 24.9935C6.87486 25.3582 6.13994 25.6139 5.2142 26.0069Z"
+                  fill="#FF4C43"></path>
+              </svg>
+            </p>
+            <div class="flex flex-col gap-2">
+              <p class="text-200 font-medium leading-tight desktop:text-300">
+                Project Outsourcing
+              </p>
+              <p>
+                Design and develop an innovative digital product and release it
+                to market. Our dedicated development teams build custom web and
+                mobile apps that meet the highest standards of the software
+                development process. Suitable for new tech startups looking to
+                launch and grow at speed
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-1 flex-col gap-3">
+            <p>
+              <svg
+                class="h-8 w-8 desktop:h-12 desktop:w-12"
+                width="48"
+                height="48"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M47.2496 35.5853C47.5239 37.4445 47.9839 39.1679 47.9461 40.8802C47.8534 45.0903 45.0979 47.9302 40.8895 47.9709C38.7747 47.9913 36.5143 47.6697 34.5664 46.8874C31.413 45.621 28.4173 43.9279 25.4511 42.2453C24.3837 41.6398 23.7403 41.5672 22.61 42.1935C19.3167 44.0186 15.9473 45.7411 12.4808 47.2021C10.9327 47.8545 9.07939 48.0114 7.36737 47.9994C2.91334 47.9679 0.0996669 45.0541 0.0153535 40.5954C-0.0561812 36.8124 1.32495 33.4157 3.00625 30.1375C3.88122 28.4315 4.87217 26.7703 5.96604 25.1971C6.59829 24.2877 6.51385 23.679 5.93316 22.8118C3.27907 18.8483 1.00026 14.7003 0.19214 9.91008C-0.93978 3.20046 3.01723 -0.8339 9.74791 0.18294C14.5576 0.909566 18.7006 3.21356 22.6616 5.85954C23.6785 6.53884 24.3344 6.5392 25.3429 5.8609C29.4005 3.13186 33.6604 0.805992 38.6089 0.122255C44.7981 -0.732896 48.6332 2.96246 47.9136 9.19193C47.3469 14.0978 45.0456 18.3329 42.3581 22.3499C41.5452 23.565 41.5602 24.3497 42.302 25.6527C44.1059 28.8206 45.5937 32.1688 47.2496 35.5853ZM35.2254 23.3018C32.8052 20.7312 30.4895 18.051 27.9404 15.6155C24.0555 11.9038 23.9256 11.9116 20.0439 15.6243C17.2966 18.252 14.7431 21.0828 11.8229 24.1137C15.9756 28.2597 19.8435 32.1213 24.089 36.3601C28.0258 32.2531 31.6269 28.5168 35.1841 24.7392C35.42 24.4888 35.3225 23.9241 35.2254 23.3018ZM31.3423 12.7609C33.9145 14.9817 36.4868 17.2024 39.0635 19.427C41.0074 16.2937 43.3717 12.4865 43.5893 7.81499C43.6947 5.55176 42.7225 4.41297 40.5892 4.43185C35.7241 4.47491 31.8166 6.96017 27.7193 9.47905C29.0361 10.6703 30.0958 11.629 31.3423 12.7609ZM8.46718 18.6823C8.79522 19.1691 9.12326 19.6559 9.4513 20.1427C9.33485 19.9617 9.2184 19.7807 9.10195 19.5997C12.6169 16.1084 16.1317 12.6171 19.6485 9.12394C16.6514 7.14836 13.0856 5.10013 8.89545 4.49831C5.36732 3.99158 3.65913 5.55627 4.57596 9.00282C5.44189 12.258 7.04961 15.3156 8.46718 18.6823ZM14.8423 41.6638C16.603 40.6826 18.3637 39.7013 19.7663 38.9196C16.1463 35.3347 12.6384 31.8607 9.11713 28.3734C7.08539 31.4384 5.06957 35.0339 4.46187 39.2348C3.9859 42.5251 5.34212 44.0378 8.5864 43.5471C10.631 43.2378 12.5928 42.3798 14.8423 41.6638ZM40.7632 43.6257C43.0079 43.1788 43.7415 42.3668 43.5857 40.0475C43.2775 35.4599 41.0165 31.6692 38.886 28.3625C35.3315 31.8819 31.8269 35.3518 28.2608 38.8827C31.827 41.109 35.6853 43.4805 40.7632 43.6257Z"
+                  fill="#FF4C43"></path>
+              </svg>
+            </p>
+            <div class="flex flex-col gap-2">
+              <p class="text-200 font-medium leading-tight desktop:text-300">
+                Team Augmentation
+              </p>
+              <p>
+                Let your digital products take advantage of our experts to build
+                more robust features or to scale up current solutions. Suitable
+                for businesses who already have a technical team surrounding
+                their product, but need to hire a few talented engineers to
+                augment their in-house team
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-brand-500 py-2.5 text-center">
+      <p class="text-50">©2023 Stellar Labs • All rights reserved</p>
+    </footer>
   </main>
+  <form name="contact" method="POST" data-netlify="true"></form>
 </Layout>

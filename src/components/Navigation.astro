@@ -4,7 +4,7 @@ import Logo from "./Logo.astro";
 ---
 
 <nav>
-  <div class="mx-6 mt-4 desktop:mx-8">
+  <div class="mx-6 mt-6 desktop:mx-8">
     <div class="relative flex items-center justify-between">
       <Logo />
       <!-- Mobile menu button -->
@@ -29,13 +29,13 @@ import Logo from "./Logo.astro";
       </button>
 
       <ul class="hidden gap-8 desktop:flex">
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Case Studies</a></li>
-        <li><a href="#">Work Models</a></li>
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#case-studies">Case Studies</a></li>
+        <li><a href="#work-models">Work Models</a></li>
       </ul>
 
       <div class="hidden desktop:block">
-        <Button title="Let's Work Together" />
+        <Button title="Let's Work Together" href="#cta" variant="primary" />
       </div>
     </div>
   </div>
@@ -43,9 +43,9 @@ import Logo from "./Logo.astro";
   <!-- Mobile menu, show/hide based on menu state -->
   <div class="hidden" id="mobile-menu">
     <div class="space-y-1 p-2 text-50">
-      <a href="#" class="block px-3 py-2">About Us</a>
-      <a href="#" class="block px-3 py-2">Case Studies</a>
-      <a href="#" class="block px-3 py-2">Work Models</a>
+      <a href="#about-us" class="block px-3 py-2">About Us</a>
+      <a href="#case-studies" class="block px-3 py-2">Case Studies</a>
+      <a href="#work-models" class="block px-3 py-2">Work Models</a>
     </div>
   </div>
 </nav>

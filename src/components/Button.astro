@@ -1,14 +1,23 @@
 ---
 interface Props {
   title: string;
+  variant: "primary" | "secondary";
   href?: string;
 }
 
-const { title, href } = Astro.props;
+const { title, variant, href } = Astro.props;
+
+const classList =
+  variant === "primary"
+    ? ["bg-brand-500 hover:bg-brand-400"]
+    : ["border-2 border-brand-500 hover:text-brand-400"];
 ---
 
 <button
-  class="rounded-full bg-brand-500 px-6 py-2 font-phudu text-50 hover:bg-brand-400 desktop:text-100"
+  class:list={[
+    "rounded-full px-6 py-2 font-phudu text-50 desktop:text-100",
+    classList,
+  ]}
 >
   <a href={href}>{title}</a>
 </button>
