@@ -6,6 +6,7 @@ import { Image } from "@astrojs/image/components";
 import heroImageMobile from "../assets/images/hero-mobile.png";
 import heroImageDesktop from "../assets/images/hero-desktop.png";
 import launchImage from "../assets/images/launch.png";
+import browserImage from "../assets/images/browser.png";
 ---
 
 <Layout title="Stellar Labs - Launch your digital product at speed">
@@ -118,7 +119,9 @@ import launchImage from "../assets/images/launch.png";
             Our Success Stories
           </h2>
         </div>
-        <div class="flex flex-col gap-6 desktop:flex-row desktop:gap-20">
+        <div
+          class="flex flex-col items-center gap-6 desktop:flex-row desktop:gap-20"
+        >
           <div class="flex flex-1 flex-col gap-6 desktop:pr-8">
             <p class="text-200 font-bold leading-tight desktop:text-300">
               Lucky Arts Admin — an invoicing app that manages all of the
@@ -130,22 +133,23 @@ import launchImage from "../assets/images/launch.png";
               billing infrastructure to the cloud for seamless business
               operations and growth
             </p>
-            <p>
+            <!-- <p>
               <Button title="Read full story" variant="secondary" />
-            </p>
+            </p> -->
             <div class="flex max-w-xs flex-col gap-2">
               <p>
                 <span class="text-500 font-bold leading-none text-brand-400"
                   >“</span
                 >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore
+                I would highly recommend Stellar Labs to anyone in need of top-notch
+                web and mobile development services. Their commitment to quality
+                work and customer satisfaction is truly outstanding
               </p>
               <p><strong>Mudassir Khakwani</strong>, CEO Lucky Arts</p>
             </div>
           </div>
           <div class="flex-1">
-            <Image src={launchImage} alt="A rocket launch" />
+            <Image src={browserImage} alt="A rocket launch" width={500} />
           </div>
         </div>
       </div>
