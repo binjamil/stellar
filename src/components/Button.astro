@@ -3,9 +3,10 @@ interface Props {
   title: string;
   variant: "primary" | "secondary";
   href?: string;
+  type?: "submit";
 }
 
-const { title, variant, href } = Astro.props;
+const { title, variant, href, type } = Astro.props;
 
 const classList =
   variant === "primary"
@@ -15,9 +16,11 @@ const classList =
 
 <button
   class:list={[
-    "rounded-full px-6 py-2 font-phudu text-50 desktop:text-100",
+    "rounded-full px-6 py-2 font-phudu text-50 desktop:text-100 w-fit",
     classList,
   ]}
+  type={type}
 >
-  <a href={href}>{title}</a>
+  {href && <a href={href}>{title}</a>}
+  {type && title}
 </button>

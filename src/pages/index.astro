@@ -7,6 +7,9 @@ import heroImageMobile from "../assets/images/hero-mobile.png";
 import heroImageDesktop from "../assets/images/hero-desktop.png";
 import launchImage from "../assets/images/launch.png";
 import browserImage from "../assets/images/lucky-case-study.png";
+import Checkbox from "../components/Checkbox.astro";
+import Input from "../components/Input.astro";
+import TextArea from "../components/TextArea.astro";
 ---
 
 <Layout title="Stellar Labs - Launch your digital product at speed">
@@ -238,6 +241,62 @@ import browserImage from "../assets/images/lucky-case-study.png";
                 their product, but need to hire a few talented engineers to
                 augment their in-house team
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="cta" class="bg-[url('/astral.png')] bg-cover bg-center">
+      <div class="bg-primary-500/75 backdrop-brightness-75">
+        <div
+          class="contain flex flex-col gap-4 py-8 desktop:flex-row desktop:items-center desktop:gap-20 desktop:py-32"
+        >
+          <div class="flex flex-1 flex-col gap-4 desktop:gap-6">
+            <div
+              class="flex justify-center gap-3 font-phudu text-500 leading-none desktop:flex-col desktop:justify-start desktop:text-800"
+            >
+              <p>Ready</p>
+              <p>Set</p>
+              <p class="text-brand-500">Launch</p>
+            </div>
+            <p class="font-medium desktop:text-200">
+              Share the details of your project – like scope, timeframes, or
+              business challenges. Our team will carefully study them and we’ll
+              figure out the next steps together. Don't worry about your IP as
+              we’ll send a signed NDA alongside
+            </p>
+          </div>
+          <div class="flex-1">
+            <div class="desktop:px-16">
+              <form
+                method="POST"
+                name="contact"
+                data-netlify="true"
+                class="flex flex-col gap-6"
+              >
+                <div class="flex flex-col gap-3">
+                  <p class="text-300 font-bold desktop:text-400">
+                    I'm interested in
+                  </p>
+                  <Checkbox label="Project Outsourcing" />
+                  <Checkbox label="Team Augmentation" />
+                  <Checkbox label="Design and Prototyping" />
+                  <Checkbox label="Web & Mobile Development" />
+                  <Checkbox label="Something else" />
+                </div>
+                <div class="flex flex-col gap-3">
+                  <Input label="Full Name" placeholder="John Doe" />
+                  <Input
+                    label="Company Email"
+                    placeholder="johndoe@example.com"
+                  />
+                  <TextArea
+                    label="Project Description"
+                    placeholder="Type your project details"
+                  />
+                  <Button title="Send" variant="primary" type="submit" />
+                </div>
+              </form>
             </div>
           </div>
         </div>

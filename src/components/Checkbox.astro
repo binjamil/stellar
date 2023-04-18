@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+}
+
+const { label } = Astro.props;
+
+const id = label.toLowerCase().replaceAll(" ", "-");
+---
+
+<div class="flex items-center justify-between">
+  <label for={id} class="text-50 font-medium uppercase">{label}</label>
+  <input
+    class="rounded-md border-brand-400 bg-primary-700/75 text-brand-500 focus:ring-0"
+    type="checkbox"
+    id={id}
+    name={id}
+  />
+</div>
